@@ -112,9 +112,15 @@ function writedata() {
     f2 = document.getElementById("c1image").files[0];
     f3 = document.getElementById("c2image").files[0];
 
-    f1name = f1.name.split(".")[1];
-    f2name = f2.name.split(".")[1];
-    f3name = f3.name.split(".")[1];
+    if (f1!=undefined) {
+        f1name = f1.name.split(".")[1];
+    }
+    if (f2!=undefined) {
+        f2name = f2.name.split(".")[1];
+    }
+    if (f3!=undefined) {
+        f3name = f3.name.split(".")[1];
+    }
 
     firebase.database().ref('events/'+branch+"/" + nam1).update({
 
@@ -137,18 +143,23 @@ function writedata() {
                 name:c2n,
                 number:c2number
             });
+            if (f1!=undefined) {
+                firebase.storage().ref('events/' + branch + "/" + nam1 + '/event.' + f1name).put(f1).then(function (snapshot) {
+                    console.log("uploaded")
+                });
+            }
+            if (f2!=undefined) {
+                firebase.storage().ref('events/' + branch + "/" + nam1 + '/cr1.' + f2name).put(f2).then(function (snapshot) {
+                    console.log("uploaded")
+                });
+            }
+            if (f3!=undefined) {
+                firebase.storage().ref('events/' + branch + "/" + nam1 + '/crd2.' + f3name).put(f3).then(function (snapshot) {
+                    console.log("uploaded");
 
-            firebase.storage().ref('events/'+branch+"/" +nam1+'/event.'+f1name).put(f1).then(function (snapshot) {
-                console.log("uploaded")
-            });
-
-            firebase.storage().ref('events/'+branch+"/" +nam1+'/cr1.'+f2name).put(f2).then(function (snapshot) {
-                console.log("uploaded")
-            });
-            firebase.storage().ref('events/'+branch+"/" +nam1+'/crd2.'+f3name).put(f3).then(function (snapshot) {
-                console.log("uploaded");
-                alert("done ")
-            });
+                });
+            }
+            alert("done ")
             // Data saved successfully!
 
         }
