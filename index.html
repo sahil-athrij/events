@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase.js"></script>
+    <script src = "submit.js" type="text/javascript"></script>
+</head>
+<body>
+
+<label>branch</label>
+<select id = "branch">
+    <option value="cs">Computer Science</option>
+    <option value="ee">Electrical</option>
+    <option value="ec">Electronics</option>
+    <option value="me">Mechanical</option>
+    <option value="se">Safety</option>
+    <option value="ce">Civil</option>
+    <option value="it">it</option>
+</select>
+
+<br>
+<label>name</label><input type="text" id = "name"><br>
+
+<input type="file" name="pic" accept="image/*" id ="image"><br>
+<label>caption</label><input type="text" id = "caption"><br>
+
+<label>description</label><br>
+<textarea rows = "5" cols = "60" id = "description">
+         </textarea><br><br>
+
+
+<label>rules</label><br>
+<textarea rows = "5" cols = "60" id = "rules">
+         </textarea><br><br>
+
+
+<label>location</label><input type="text" id ="location"><br>
+<h3>cordinator 1</h3><br>
+
+<label>name</label><input type="text" id = "crd1name"> <br>
+<label>phone number</label><input type="text" id = "crd1number"><br>
+<input type="file" name="pic" accept="image/*" id ="c1image"><br>
+<h3>cordinator 2</h3><br>
+
+<label>name</label><input type="text" id = "crd2name"><br>
+<label>phone number </label><input type="text" id = "crd2number"><br>
+    <input type="file" name="pic" accept="image/*" id ="c2image"><br><br>
+
+    <button onclick="writedata()">Submit</button>
+
+</body>
+</html>
