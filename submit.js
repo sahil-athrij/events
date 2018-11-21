@@ -62,7 +62,7 @@ function putevent() {
         c1n.value = eve.coordinators.crd1.name;
 
         c1number = document.getElementById("crd1number");
-        c1number.value =  eve.coordinators.crd2.number;
+        c1number.value =  eve.coordinators.crd1.number;
 
         c2n = document.getElementById("crd2name");
         c2n.value = eve.coordinators.crd2.name;
