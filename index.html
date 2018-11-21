@@ -10,7 +10,7 @@
 <body>
 
 <label>branch</label>
-<select id = "branch">
+<select id = "branch" onchange="getevents()">
     <option value="cs">Computer Science</option>
     <option value="ee">Electrical</option>
     <option value="ec">Electronics</option>
@@ -21,7 +21,15 @@
 </select>
 
 <br>
-<label>name</label><input type="text" id = "name"><br>
+<label>select existing event</label>
+<select id = "event" onchange="putevent()">
+    <option value="">select...</option>
+</select><br>
+
+
+
+
+<label>event name</label><input type="text" id = "name"><br>
 
 <input type="file" name="pic" accept="image/*" id ="image"><br>
 <label>caption</label><input type="text" id = "caption"><br>
