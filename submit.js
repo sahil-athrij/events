@@ -101,7 +101,7 @@ function writedata() {
     c2n = document.getElementById("crd2name");
     c2n = c2n.value;
 
-    c1number = document.getElementById("crd2number");
+    c1number = document.getElementById("crd1number");
     c1number = c1number.value;
 
     c2number = document.getElementById("crd2number");
