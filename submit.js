@@ -27,7 +27,7 @@ function getevents() {
         })
         // ...
     });
-    
+
 }
 
 function putevent() {
@@ -88,6 +88,10 @@ function putevent() {
         kw = document.getElementById("keywords");
         kw.value = eve.keywords;
 
+        stdate = document.getElementById("startdate");
+        stdate.value = eve.startdate;
+        enddate = document.getElementById("enddate");
+        enddate.value = eve.enddate;
 
 
     });
@@ -143,6 +147,11 @@ function writedata() {
     kw = document.getElementById("keywords");
     kw = kw.value;
 
+    stdate = document.getElementById("startdate");
+    stdate = stdate.value;
+    enddate = document.getElementById("enddate");
+    enddate = enddate.value;
+
     f1 = document.getElementById("image").files[0];
     f2 = document.getElementById("c1image").files[0];
     f3 = document.getElementById("c2image").files[0];
@@ -168,7 +177,9 @@ function writedata() {
         prize3:prize3,
         registration:reg,
         fee:regfee,
-        keywords:kw
+        keywords:kw,
+        startdate:stdate,
+        enddate:enddate
 
 
     }, function (error) {
