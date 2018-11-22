@@ -16,9 +16,11 @@ function getevents() {
     firebase.database().ref('/events/' + branch).once('value').then(function(snapshot) {
         console.log(snapshot.val());
         snapshot.forEach(function (child) {
-            console.log(child.val());
+
+            s = '"'+child.key+'"';
+            console.log(s);
             sel = document.getElementById("event");
-            sel.innerHTML += '<option value='+child.key+">"+child.key+"</option>"
+            sel.innerHTML += '<option value='+s+">"+child.key+"</option>"
 
 
 
