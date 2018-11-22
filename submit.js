@@ -70,6 +70,21 @@ function putevent() {
         c2number = document.getElementById("crd2number");
         c2number.value =  eve.coordinators.crd2.number;
 
+        prize1 = document.getElementById("1prize");
+        prize1.value = eve.prize1;
+
+        prize2 = document.getElementById("2prize");
+        prize2.value = eve.prize2;
+
+        prize3 = document.getElementById("3prize");
+        prize3.value = eve.prize3;
+
+        regfee = document.getElementById("regfee");
+        regfee.value =eve.fee;
+
+
+        kw = document.getElementById("keywords");
+        kw.value = eve.keywords;
 
 
 
@@ -107,6 +122,24 @@ function writedata() {
     c2number = document.getElementById("crd2number");
     c2number = c2number.value;
 
+    prize1 = document.getElementById("1prize");
+    prize1 = prize1.value;
+
+    prize2 = document.getElementById("2prize");
+    prize2 = prize2.value;
+
+    prize3 = document.getElementById("3prize");
+    prize3 = prize3.value;
+
+
+    reg = document.getElementById("openreg");
+    reg = reg.value;
+
+    regfee = document.getElementById("regfee");
+    regfee = regfee.value;
+
+    kw = document.getElementById("keywords");
+    kw = kw.value;
 
     f1 = document.getElementById("image").files[0];
     f2 = document.getElementById("c1image").files[0];
@@ -128,6 +161,12 @@ function writedata() {
         description:desc,
         rules: rules,
         location: loc,
+        prize1:prize1,
+        prize2:prize2,
+        prize3:prize3,
+        registration:reg,
+        fee:regfee,
+        keywords:kw
 
 
     }, function (error) {
@@ -168,3 +207,15 @@ function writedata() {
 
 }
 
+
+function readURL(input,div) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            document.getElementById(div).setAttribute('src', e.target.result);
+        };
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
