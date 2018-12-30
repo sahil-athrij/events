@@ -60,6 +60,9 @@ function putevent() {
         loc = document.getElementById("location");
         loc.value = eve.location;
 
+        insta = document.getElementById("insta");
+        insta.value = eve.insta;
+
         c1n = document.getElementById("crd1name");
         c1n.value = eve.coordinators.crd1.name;
 
@@ -111,6 +114,9 @@ function writedata() {
 
     rules = document.getElementById("rules");
     rules = rules.value;
+
+    insta = document.getElementById("insta");
+    insta = insta.value;
 
     loc = document.getElementById("location");
     loc = loc.value;
@@ -179,7 +185,8 @@ function writedata() {
         fee:regfee,
         keywords:kw,
         startdate:stdate,
-        enddate:enddate
+        enddate:enddate,
+        insta:insta
 
 
     }, function (error) {
