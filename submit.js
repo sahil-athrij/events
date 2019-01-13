@@ -157,7 +157,7 @@ function writedata() {
     stdate = stdate.value;
     enddate = document.getElementById("enddate");
     enddate = enddate.value;
-
+    f0 = document.getElementById("brimg").files[0];
     f1 = document.getElementById("image").files[0];
     f2 = document.getElementById("c1image").files[0];
     f3 = document.getElementById("c2image").files[0];
@@ -202,6 +202,11 @@ function writedata() {
                 name:c2n,
                 number:c2number
             });
+            if (f0!=undefined) {
+                firebase.storage().ref('events/' + branch + "/branch.svg").put(f0).then(function (snapshot) {
+                    console.log("uploaded")
+                });
+            }
             if (f1!=undefined) {
                 firebase.storage().ref('events/' + branch + "/" + nam1 + '/event.' + f1name).put(f1).then(function (snapshot) {
                     console.log("uploaded")
