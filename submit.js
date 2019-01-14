@@ -63,6 +63,9 @@ function putevent() {
         insta = document.getElementById("insta");
         insta.value = eve.insta;
 
+        uid = document.getElementById("inuid");
+        uid.value = eve.insta_uid;
+
         c1n = document.getElementById("crd1name");
         c1n.value = eve.coordinators.crd1.name;
 
@@ -117,6 +120,9 @@ function writedata() {
 
     insta = document.getElementById("insta");
     insta = insta.value;
+
+    uid = document.getElementById("inuid");
+    uid = uid.value;
 
     loc = document.getElementById("location");
     loc = loc.value;
@@ -186,7 +192,8 @@ function writedata() {
         keywords:kw,
         startdate:stdate,
         enddate:enddate,
-        insta:insta
+        insta:insta,
+        insta_uid:uid
 
 
     }, function (error) {
